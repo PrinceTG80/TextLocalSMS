@@ -24,9 +24,8 @@ def home():
     apikey = str(request.args['token'])
     numbers = str(request.args['mobile'])
     otpCode = str(generateOTP())
-    clientName = str(request.args['Name'])
     try: 
-        resp, code = sendSMS(apikey, numbers,'USMRTA', 'Dear '+clientName+', OTP is '+otpCode+' for Gate Pass, kindly enter it to confirm your gate pass. thank you! Managed By U SMART AI LAB.')
+        resp, code = sendSMS(apikey, numbers,'USMRTA', 'Dear '+numbers+', OTP is '+otpCode+' for Gate Pass, kindly enter it to confirm your gate pass. thank you! Managed By U SMART AI LAB.')
         return resp
     except:
         return  "Hello World"
