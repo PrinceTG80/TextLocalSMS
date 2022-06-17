@@ -18,6 +18,6 @@ def home():
     clientName = str(request.args['Name'])
     try: 
         resp, code = sendSMS(apikey, numbers,'USMRTA', 'Dear '+clientName+', OTP is '+otpCode+' for Gate Pass, kindly enter it to confirm your gate pass. thank you! Managed By U SMART AI LAB.')
-        return resp
+        return resp.status
     except:
         return  "Hello World"
